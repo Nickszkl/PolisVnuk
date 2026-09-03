@@ -38,8 +38,15 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="number-badge w-10 h-10 rounded-full flex items-center justify-center font-mono font-bold text-[#0D2137] text-sm flex-shrink-0 group-hover:scale-110 transition-transform">
-              {candidate.number}
+            <div className="flex flex-col items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <img
+                src={candidate.photo}
+                alt={candidate.name}
+                className="w-10 h-10 rounded-full object-cover border-2 border-[#F0A500]/80 shadow-[0_0_0_2px_rgba(240,165,0,0.2)]"
+              />
+              <span className="mt-1 font-mono font-bold text-[#F0A500] text-[10px] leading-none">
+                {candidate.number}
+              </span>
             </div>
             <div className="hidden sm:block">
               <div className="font-display font-bold text-white text-lg leading-tight uppercase tracking-wide">

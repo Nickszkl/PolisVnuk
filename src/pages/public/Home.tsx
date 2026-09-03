@@ -447,6 +447,8 @@ function ProposalCard({ proposal, category, index }: { proposal: any; category: 
 
 function EventCard({ event, index, formatDate, eventTypeColors, eventTypeLabels }: any) {
   const { ref, inView } = useInView();
+  const fallbackImage = 'https://images.unsplash.com/photo-1540575467537-b012e9ac9cfe?w=1200&h=800&fit=crop&auto=format&q=80';
+
   return (
     <div
       ref={ref}
@@ -454,7 +456,18 @@ function EventCard({ event, index, formatDate, eventTypeColors, eventTypeLabels 
     >
       {event.image && (
         <div className="h-40 overflow-hidden">
-          <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <img
+            src={event.image}
+            alt={event.title}
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement;
+              if (!target.dataset.fallbackApplied) {
+                target.dataset.fallbackApplied = 'true';
+                target.src = fallbackImage;
+              }
+            }}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          />
         </div>
       )}
       <div className="p-5">

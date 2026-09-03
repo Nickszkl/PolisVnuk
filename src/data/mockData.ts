@@ -167,7 +167,7 @@ export const eventsData: CampaignEvent[] = [
     endTime: '22:00',
     location: 'Praça da Independência',
     address: 'Parque da Independência, Ipiranga, São Paulo – SP',
-    image: 'https://lh3.googleusercontent.com/grass-cs/ACvplmNOIB_oYmUr66fpFVube8ZV_HEfjfOujRlxgfUSUOXBneTlAYM8OWdBZVs3x0YL8e0oknmFwGcKJI2XiflrVGtVm1mf2YU9QnSbdicP1bp0gULyyAK3B6z99ls5oARoi1v2XWeD=w326-h312-n-k-no',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSropLXTtrYt9NC4Q8wCeUoTSQGaK99h2gptArne71VkQ&s=10',
     type: 'comicio',
     featured: true,
   },
