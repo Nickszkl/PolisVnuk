@@ -78,6 +78,9 @@
 *.ttf                filter=lfs diff=lfs merge=lfs -text
 *.otf                filter=lfs diff=lfs merge=lfs -text
 *.woff               filter=lfs diff=lfs merge=lfs -text
+
+# Keep the candidate photo available to static hosting providers.
+src/data/Gemini_Generated_Image_dccgkxdccgkxdccg.jpg -filter -diff -merge
 *.woff2              filter=lfs diff=lfs merge=lfs -text
 *.eot                filter=lfs diff=lfs merge=lfs -text
 
