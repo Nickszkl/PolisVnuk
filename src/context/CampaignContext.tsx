@@ -83,7 +83,8 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
   const [candidate, setCandidate] = useState<Candidate>(() => {
     const storedCandidate = load('pedrinho_candidate', candidateData);
     const isLegacyCandidatePhoto = storedCandidate.photo.startsWith('blob:https://gemini.google.com/')
-      || storedCandidate.photo.includes('media.gazetadopovo.com.br/2025/03/09170035');
+      || storedCandidate.photo.includes('media.gazetadopovo.com.br/2025/03/09170035')
+      || storedCandidate.photo.includes('Gemini_Generated_Image_dccgkxdccgkxdccg');
     return isLegacyCandidatePhoto
       ? { ...storedCandidate, photo: candidateData.photo }
       : storedCandidate;
