@@ -80,10 +80,22 @@ function uid() {
 export function CampaignProvider({ children }: { children: ReactNode }) {
   syncStorageVersion();
 
-  const [candidate, setCandidate] = useState<Candidate>(() => load('pedrinho_candidate', candidateData));
+  const [candidate, setCandidate] = useState<Candidate>(() => {
+    const storedCandidate = load('pedrinho_candidate', candidateData);
+    const isLegacyCandidatePhoto = storedCandidate.photo.startsWith('blob:https://gemini.google.com/')
+      || storedCandidate.photo.includes('media.gazetadopovo.com.br/2025/03/09170035');
+    return isLegacyCandidatePhoto
+      ? { ...storedCandidate, photo: candidateData.photo }
+      : storedCandidate;
+  });
   const [categories, setCategories] = useState<ProposalCategory[]>(() => load('pedrinho_categories', proposalCategories));
   const [proposals, setProposals] = useState<Proposal[]>(() => load('pedrinho_proposals', proposalsData));
-  const [events, setEvents] = useState<CampaignEvent[]>(() => load('pedrinho_events', eventsData));
+  const [events, setEvents] = useState<CampaignEvent[]>(() => {
+    const storedEvents = load('pedrinho_events', eventsData);
+    return storedEvents.map(event => event.title === 'Grande Comício no Ipiranga'
+      ? { ...event, image: eventsData.find(defaultEvent => defaultEvent.id === event.id)?.image ?? event.image }
+      : event);
+  });
   const [news, setNews] = useState<NewsItem[]>(() => load('pedrinho_news', newsData));
   const [gallery, setGallery] = useState<GalleryItem[]>(() => load('pedrinho_gallery', galleryData));
   const [documents, setDocuments] = useState<Document[]>(() => load('pedrinho_documents', documentsData));

@@ -1,4 +1,5 @@
 import type { Candidate, ProposalCategory, Proposal, CampaignEvent, NewsItem, GalleryItem, Document, SocialLink, AdminUser, Stats } from '../types';
+import candidatePhoto from './Gemini_Generated_Image_dccgkxdccgkxdccg.jpg';
 
 export const candidateData: Candidate = {
   name: 'Pedro Henrique Costa',
@@ -12,7 +13,7 @@ export const candidateData: Candidate = {
   slogan: 'Pedrinho — A voz do povo na Câmara!',
   bio: `Pedro Henrique Costa, o Pedrinho, nasceu e cresceu no bairro do Ipiranga, em São Paulo. Filho de professora e comerciante, desde cedo aprendeu o valor do trabalho e da educação.\n\nFormado em Administração Pública pela USP e mestre em Gestão Municipal pela UNICAMP, Pedro dedicou mais de 15 anos ao serviço público municipal. Começou como voluntário no Centro de Assistência Social do bairro, depois se tornou assessor na Câmara Municipal e coordenador de projetos na Secretaria de Educação.\n\nEm 2022, fundou o Instituto Renovar SP, que já beneficiou mais de 3.000 famílias com cursos de capacitação profissional, apoio jurídico gratuito e projetos de esporte para jovens em situação de vulnerabilidade.\n\nPedrinho é casado com Maria Fernanda, professora da rede municipal, e pai de dois filhos. É torcedor apaixonado do Corinthians e maratonista nas horas vagas.`,
   shortBio: 'Nascido e criado no Ipiranga, Pedro Henrique dedicou 15 anos ao serviço público. Mestre em Gestão Municipal, fundador do Instituto Renovar SP, que já beneficiou mais de 3.000 famílias.',
-  photo: 'https://media.gazetadopovo.com.br/2025/03/09170035/deputado-deputado-estadual-Guilherme-Cortez-720x720.jpg?v=2',
+  photo: candidatePhoto,
   whatsapp: '5511999999999',
   email: 'contato@pedrinho55555.com.br',
   birthDate: '1985-03-15',
@@ -167,7 +168,7 @@ export const eventsData: CampaignEvent[] = [
     endTime: '22:00',
     location: 'Praça da Independência',
     address: 'Parque da Independência, Ipiranga, São Paulo – SP',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSropLXTtrYt9NC4Q8wCeUoTSQGaK99h2gptArne71VkQ&s=10',
+    image: candidatePhoto,
     type: 'comicio',
     featured: true,
   },
