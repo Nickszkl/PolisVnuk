@@ -320,7 +320,7 @@ export const newsData: NewsItem[] = [
 ];
 
 export const galleryData: GalleryItem[] = [
-  { id: '1', url: 'https://images.unsplash.com/photo-1540575467537-b012e9ac9cfe?w=600&h=400&fit=crop', caption: 'Comício de lançamento da campanha', type: 'photo', createdAt: '2026-08-01', featured: true },
+  { id: '1', url: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&h=800&fit=crop&auto=format&q=80', caption: 'Comício de lançamento da campanha', type: 'photo', createdAt: '2026-08-01', featured: true },
   { id: '2', url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop', caption: 'Caminhada na Vila Prudente', type: 'photo', createdAt: '2026-08-05', featured: true },
   { id: '3', url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=600&fit=crop', caption: 'Visita a escolas municipais', type: 'photo', createdAt: '2026-08-10', featured: false },
   { id: '4', url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', caption: 'Reunião com moradores do Ipiranga', type: 'photo', createdAt: '2026-08-12', featured: true },

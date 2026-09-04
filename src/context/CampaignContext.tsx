@@ -97,7 +97,12 @@ export function CampaignProvider({ children }: { children: ReactNode }) {
       : event);
   });
   const [news, setNews] = useState<NewsItem[]>(() => load('pedrinho_news', newsData));
-  const [gallery, setGallery] = useState<GalleryItem[]>(() => load('pedrinho_gallery', galleryData));
+  const [gallery, setGallery] = useState<GalleryItem[]>(() => {
+    const storedGallery = load('pedrinho_gallery', galleryData);
+    return storedGallery.map(item => item.caption === 'Comício de lançamento da campanha'
+      ? { ...item, url: galleryData.find(defaultItem => defaultItem.id === item.id)?.url ?? item.url }
+      : item);
+  });
   const [documents, setDocuments] = useState<Document[]>(() => load('pedrinho_documents', documentsData));
   const [socialLinks, setSocialLinksState] = useState<SocialLink[]>(() => load('pedrinho_social', socialLinksData));
   const [adminUsers, setAdminUsers] = useState<AdminUser[]>(() => load('pedrinho_admin_users', adminUsersData));
